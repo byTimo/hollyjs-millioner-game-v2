@@ -320,49 +320,6 @@ img {
     transition: opacity 1s;
 }
 
-.personPhrase.visit {
-    opacity: 1;
-}
-
-.hollBlock {
-    position: absolute;
-    display: flex;
-    left: -410px;
-    top: 400px;
-    width: 400px;
-    height: 400px;
-    background: var(--blue);
-    border: 5px solid var(--light-blue);
-    transition: left 1s;
-}
-
-.hollBlock.visit {
-    left: 0;
-}
-
-.column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.columnNumber {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--dark-orange);
-}
-
-.columnLevel {
-    height: 400px;
-    display: flex;
-    flex-direction: column-reverse;
-}
-.columnLevelValue {
-    background-color: var(--orange);
-    width: 50px;
-}
-
 .menu {
     display: flex;
     align-items: center;

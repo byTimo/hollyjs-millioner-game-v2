@@ -1,12 +1,3 @@
-const phrases = [
-    "Это полюбому {answer}.",
-    "Я вчера об этом думал! Это точно {answer}.",
-    "Кончно же это {answer}. Это же все знают!",
-    "Вчера говорил с Обамой. Он думает, что это {answer}.",
-    "Это сложно, я не знаю ответа.",
-    "Когда то давно люди считали, что это {answer}. Наверно ничего не изменилось."
-];
-
 function random(from, to) {
     return Math.floor(Math.random() * (to - from)) + from;
 }
@@ -79,7 +70,6 @@ class RegistrationPage {
         this.page = document.querySelector(".registration");
         this.submit = document.querySelector(".submit");
         this.form = document.querySelector(".form");
-        this.levels = document.querySelector(".levels");
         this.availableLevels = availableLevels;
         this.register = this.register.bind(this);
     }
@@ -88,17 +78,6 @@ class RegistrationPage {
         this.form.reset();
         this.page.classList.remove("invisible");
         this.submit.addEventListener("click", this.register);
-        for (let i = 0; i < this.availableLevels.length; i++) {
-            const option = document.createElement("option");
-            option.textContent = this.availableLevels[i];
-            if(i === 0) {
-                option.setAttribute("selected", true);
-            }
-            this.levels.appendChild(option);
-        }
-        if (this.availableLevels.length > 1) {
-            this.levels.classList.remove("invisible");
-        }
     }
 
     run() {
@@ -107,7 +86,6 @@ class RegistrationPage {
     }
 
     dispose() {
-        this.levels.innerHTML = '';
         this.page.classList.add("invisible");
         this.submit.removeEventListener("click", this.register)
     }
@@ -125,7 +103,7 @@ class RegistrationPage {
         }
 
         if (user.name && user.email) {
-            this.end({user, level: this.levels.options[this.levels.selectedIndex].text});
+            this.end({user, level: config.level});
         }
     }
 }
@@ -197,13 +175,22 @@ class AnswerButton {
         this.dom.classList.add("disabled");
     }
 
-    setAnswer(index, text, isRight) {
+    setAnswer(index, src, isRight) {
         this.isDisabled = false;
         this.dom.classList.remove("disabled");
         this.index = index;
         this.isRight = isRight;
-        this.dom.textContent = text;
+        this.clearAnswer();
+        const img = document.createElement("img");
+        img.src = src;
+        this.dom.appendChild(img);
         this.dom.addEventListener("click", this.handleClick);
+    }
+
+    clearAnswer() {
+        if (this.dom.firstChild) {
+            this.dom.removeChild(this.dom.firstChild);
+        }
     }
 
     handleClick() {
@@ -247,32 +234,14 @@ class GamePage {
         this.answer = this.answer.bind(this);
         this.answers = [1, 2, 3, 4].map(x => new AnswerButton(document.querySelector(`.answer-${x}`), this.answer));
         this.help5050Button = document.querySelector(".help5050");
-        this.helpPersonButton = document.querySelector(".helpPerson");
-        this.helpHollButton = document.querySelector(".helpHoll");
-        this.persons = [
-            document.querySelector("#bill"),
-            document.querySelector("#dan"),
-            document.querySelector("#elon"),
-            document.querySelector("#pavel"),
-            document.querySelector("#zuck"),
-        ];
-        this.personPhrase = document.querySelector(".personPhrase");
-        this.hollLevels = document.querySelectorAll(".columnLevelValue");
-        this.holl = document.querySelector(".hollBlock");
         this.timer = new Timer(config.time, this.end.bind(this));
 
         this.help5050 = this.help5050.bind(this);
-        this.helpHoll = this.helpHoll.bind(this);
-        this.helpPerson = this.helpPerson.bind(this);
     }
 
     initialize() {
         this.help5050Button.classList.remove("invisible");
-        this.helpPersonButton.classList.remove("invisible");
-        this.helpHollButton.classList.remove("invisible");
         this.help5050Button.addEventListener("click", this.help5050);
-        this.helpHollButton.addEventListener("click", this.helpHoll);
-        this.helpPersonButton.addEventListener("click", this.helpPerson);
         this.page.classList.remove("invisible");
     }
 
@@ -284,8 +253,6 @@ class GamePage {
 
     dispose() {
         this.help5050Button.removeEventListener("click", this.help5050);
-        this.helpHollButton.removeEventListener("click", this.helpHoll);
-        this.helpPersonButton.removeEventListener("click", this.helpPerson);
         this.timer.stop();
         this.clearTask();
         this.page.classList.add("invisible");
@@ -300,7 +267,7 @@ class GamePage {
         this.timer.stop();
         this.answers.map(x => x.disable());
         const round = this.rounds[this.currentRoundIndex];
-        round.rightAnswer === number ? this.nextRound(number, round.factor) : this.loose(round.rightAnswer, number);
+        round.right === number ? this.nextRound(number, round.factor) : this.loose(round.right, number);
     }
 
     nextRound(number, factor) {
@@ -340,14 +307,8 @@ class GamePage {
     }
 
     createTaskTag(task) {
-        if (task.src) {
-            const img = document.createElement("img");
-            img.src = task.src;
-            return img;
-        }
-
         const p = document.createElement("pre");
-        p.textContent = task.task;
+        p.textContent = task.text;
         return p;
     }
 
@@ -356,33 +317,9 @@ class GamePage {
         const firstWrongAnswer = this.answers.filter(x => !x.isRight)[random(0, 3)];
         const secondWrongAnswer = this.answers.filter(x => !x.isRight && x.index !== firstWrongAnswer.index)[random(0, 2)];
         firstWrongAnswer.disable();
+        firstWrongAnswer.clearAnswer();
         secondWrongAnswer.disable();
-    }
-
-    helpPerson() {
-        this.helpPersonButton.classList.add("invisible");
-        const one = this.persons[random(0, 4)];
-        const variants = this.answers.filter(x => !x.isDisabled);
-        const answer = variants[random(0, variants.length - 1)];
-        this.personPhrase.textContent = phrases[random(0, phrases.length - 1)].replace(/{answer}/, answer.dom.textContent);
-        this.personPhrase.classList.add("visit");
-        one.classList.add("visit");
-        setTimeout(() => {
-            one.classList.remove("visit");
-            this.personPhrase.classList.remove("visit");
-        }, 4000);
-    }
-
-    helpHoll() {
-        this.helpHollButton.classList.add("invisible");
-        const first = random(0, this.answers[0].isDisabled ? 0 : 75);
-        const second = random(0, this.answers[1].isDisabled ? 0 : 100 - first);
-        const third = random(0, this.answers[2].isDisabled ? 0 : 100 - first - second);
-        const fourth = this.answers[3].isDisabled ? 0 : 100 - first - second - third;
-        const values = [first, second, third, fourth];
-        this.hollLevels.forEach((x, i) => x.style.height = `${400 * values[i] / 100}px`);
-        this.holl.classList.add("visit");
-        setTimeout(() => this.holl.classList.remove("visit"), 3000);
+        secondWrongAnswer.clearAnswer();
     }
 }
 
