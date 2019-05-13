@@ -183,6 +183,8 @@ class AnswerButton {
         this.clearAnswer();
         const img = document.createElement("img");
         img.src = src;
+        img.classList.add("answer-img");
+        
         this.dom.appendChild(img);
         this.dom.addEventListener("click", this.handleClick);
     }

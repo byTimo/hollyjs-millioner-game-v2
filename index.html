@@ -10,12 +10,13 @@
 <body>
     <div class="root">
         <div class="registration page invisible">
+            <img src="img/logo.png" alt="Контур.Фейс" width="350" class="logo" />
             <div class="registrationContainer">
                 <form class="form">
-                    <label for="name">Имя и фамилия</label>
-                    <input class="block" type="text" id="name" name="name" autofocus autocomplete="off" />
-                    <label for="email">Email</label>
-                    <input class="block" type="email" id="email" name="email" autocomplete="off" />
+                    <!-- <label for="name">Имя и фамилия</label> -->
+                    <input class="block" type="text" id="name" name="name" placeholder="Имя и фамилия" autofocus autocomplete="off" />
+                    <!-- <label for="email">Email</label> -->
+                    <input class="block" type="email" id="email" name="email" placeholder="Email" autocomplete="off" />
                     <button class="button submit" type="submit">
                         Поехали
                     </button>
@@ -28,25 +29,30 @@
         <div class="game page invisible">
             <div class="personPhrase"></div>
             <div class="menu">
-                <button class="help help5050"><img src="assets/50-degrees-minium-agitation.svg"></button>
+                <button class="help help5050">50/50</button>
                 <div class="spiner">
                     <div class="spinner-inner"></div>
                     <div class="spinner-mask"></div>
                     <div class="spinner-mask-two"></div>
-                    <div class="timer">
+                    <div class="timer-wrapper">
+                        <div class="timer"></div>
                     </div>
                 </div>
             </div>
-            <div class="task block"></div>
+            <div class="task"></div>
             <div class="answers">
-                <button class="answer-1 button"></button>
-                <button class="answer-2 button"></button>
-                <button class="answer-3 button"></button>
-                <button class="answer-4 button"></button>
+                <div class="answer-wrapper">
+                    <button class="answer-1 button answer-button"></button>
+                    <button class="answer-2 button answer-button"></button>
+                </div>
+                <div class="answer-wrapper">
+                    <button class="answer-3 button answer-button"></button>
+                    <button class="answer-4 button answer-button"></button>
+                </div>
             </div>
         </div>
         <div class="gameover page invisible">
-            <div class="result block"></div>
+            <div class="result"></div>
             <button class="button end">
                 Конец
             </button>

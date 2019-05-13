@@ -1,6 +1,6 @@
 ﻿const config = {
     level: "test",
-    time: 50000
+    time: 500000
 }
 
 const levels = {

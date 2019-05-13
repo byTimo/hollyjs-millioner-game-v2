@@ -1,29 +1,30 @@
 :root {
-    --light-blue: rgb(102, 189, 204);
+    --text-font: #333;
     --blue: rgb(3, 14, 51);
-    --background-blue: rgb(1, 43, 116);
+    --background-blue: #eee;
+    --background-white: white;
     --orange: rgb(255, 204, 0);
-    --dark-orange: rgb(255, 102, 0);
+    --accent-color: #E52E37;
     --green: rgb(102, 204, 0);
 }
 
 label {
     font-size: 16px;
-    color: var(--light-blue);
+    color: var(--text-font);
     font-weight: 500;
 }
 
-.timer {
+.timer-wrapper {
     box-sizing: border-box;
     position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 70px;
-    height: 70px;
-    background: var(--blue);
-    color: var(--dark-orange);
+    top: 2px;
+    left: 2px;
+    width: 48px;
+    height: 48px;
+    background: var(--background-white);
+    color: var(--accent-color);
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
     display: flex;
     flex-direction: column;
@@ -31,10 +32,14 @@ label {
     align-items: center;
 }
 
+.timer {
+    margin-top: -2px;
+}
+
 .spiner {
-    background: var(--light-blue);
-    width: 80px;
-    height: 80px;
+    background: var(--text-font);
+    width: 52px;
+    height: 52px;
     position: relative;
     border-radius: 50px;
 }
@@ -47,8 +52,8 @@ label {
     height: 0;
     background: transparent;
     border-radius: 50px;
-    border: 40px solid transparent;
-    border-top-color: var(--dark-orange);
+    border: 26px solid transparent;
+    border-top-color: var(--accent-color);
     transform: rotate(-45deg);
 }
 
@@ -60,25 +65,25 @@ label {
         border-left-color: transparent;
     }
     26% {
-        border-left-color: var(--dark-orange);
+        border-left-color: var(--accent-color);
     }
     50% {
         border-bottom-color: transparent;
     }
     51% {
-        border-bottom-color: var(--dark-orange);
+        border-bottom-color: var(--accent-color);
     }
     75% {
         border-right-color: transparent;
     }
     76% {
-        border-right-color: var(--dark-orange);
+        border-right-color: var(--accent-color);
     }
     100% {
         transform: rotate(315deg);
-        border-left-color: var(--dark-orange);
-        border-bottom-color: var(--dark-orange);
-        border-right-color: var(--dark-orange);
+        border-left-color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
+        border-right-color: var(--accent-color);
     }
 }
 
@@ -90,8 +95,8 @@ label {
     height: 0;
     background: transparent;
     border-radius: 50px;
-    border: 40px solid transparent;
-    border-top-color: var(--light-blue);
+    border: 26px solid transparent;
+    border-top-color: var(--text-font);
     transform: rotate(-45deg);
 }
 
@@ -116,8 +121,8 @@ label {
     height: 0;
     background: transparent;
     border-radius: 50px;
-    border: 40px solid transparent;
-    border-top-color: var(--dark-orange);
+    border: 26px solid transparent;
+    border-top-color: var(--accent-color);
     transform: rotate(45deg);
     opacity: 0;
 }
@@ -141,13 +146,17 @@ html,
 body {
     margin: 0;
     height: 100%;
-    background-color: var(--background-blue);
-    font-family: 'Quicksand', sans-serif;
+    background-color: var(--background-white);
+    font-family: Segoe UI,Helvetica Neue,Roboto,Arial,sans-serif;
 }
 
-img {
+.logo {
+    display: inline-block;
+    margin-top: 3em;
+}
+
+.answer-img {
     width: auto;
-    height: 400px;
 }
 
 .root {
@@ -161,31 +170,43 @@ img {
 }
 
 .block {
-    border: 5px solid var(--light-blue);
-    color: var(--light-blue);
-    background: var(--blue);
-    padding: 30px 50px;
-    min-width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid var(--text-font);
+    color: var(--text-font);
+    padding: 0 24px 0;
+    min-width: 275px;
     font-size: 24px;
-    font-weight: 600;
+    line-height: 50px;
+    /* font-weight: 600; */
+}
+
+.block:focus {
+    outline: none;
+    border-bottom-color: var(--accent-color);
 }
 
 .button {
-    color: var(--light-blue);
-    background: var(--blue);
-    border: 5px solid var(--light-blue);
-    padding: 30px 50px;
-    margin: 10px 0;
-    min-width: 300px;
+    color: var(--text-font);
+    border: 2px solid var(--text-font);
+    padding: 0 24px 0;
+    margin: 30px 0;
+    min-width: 170px;
     font-size: 24px;
     font-weight: 600;
     cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 44px;
+    vertical-align: top;
+    line-height: 50px;
 }
 
-.button:hover {
-    background: var(--orange);
-    color: white;
-    border: 5px solid white;
+.button:hover,
+.button:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    outline: none;
 }
 
 .button.disabled {
@@ -195,8 +216,23 @@ img {
 
 .button.disabled:hover {
     color: var(--blue);
-    border-color: var(--light-blue);
+    border-color: var(--text-font);
     background-color: var(--blue);
+}
+
+.answer-wrapper {
+    text-align: center;
+}
+
+.answer-button {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 25px 0;
+    border: none;
+    width: 250px;
+    overflow: hidden;
+}
+
+.registration {
+    text-align: center;
 }
 
 .registrationContainer {
@@ -217,17 +253,17 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    margin: 30px 0;
+    margin: 10px 0;
+    color: var(--text-font);
+    font-size: 24px;;
 }
 
-.answers {
-    columns: 2;
-    column-gap: 20px;
-}
-
-.answers .button {
-    width: 100%;
+.answers {    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    margin: 0 auto;
 }
 
 @keyframes good {
@@ -244,7 +280,7 @@ img {
 
 @keyframes bad {
     to {
-        background: var(--dark-orange);
+        background: var(--accent-color);
         color: white;
         border-color: white;
     }
@@ -259,9 +295,10 @@ img {
 }
 
 .result {
-    color: var(--orange);
+    color: var(--accent-color);
     text-align: center;
     margin: 50px 0;
+    font-size: 56px
 }
 
 .timerNumber > div {
@@ -276,21 +313,26 @@ img {
 }
 
 .help {
-    background: var(--blue);
-    border: 5px solid var(--light-blue);
-    border-radius: 100px;
-    width: 90px;
-    height: 60px;
+    color: var(--text-font);
+    border: 2px solid var(--text-font);
+    padding: 0 24px 0;
+    margin: 10px 0;
+    min-width: 120px;
+    font-size: 24px;
+    font-weight: 600;
     cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 44px;
+    vertical-align: top;
+    line-height: 50px;
+    margin-right: 40px;
 }
 
-.help:hover {
-    background: var(--orange);
-}
-
-.help > img {
-    width: 46px;
-    height: 46px;
+.help:hover,
+.help:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    outline: none;
 }
 
 .person {
@@ -310,8 +352,8 @@ img {
     left: 0;
     top: 400px;
     background-color: var(--blue);
-    border: 5px solid var(--light-blue);
-    color: var(--light-blue);
+    border: 5px solid var(--text-font);
+    color: var(--text-font);
     font-size: 16px;
     font-weight: 500;
     padding: 20px;
@@ -324,14 +366,12 @@ img {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    border: 5px solid var(--light-blue);
-    background: var(--blue);
 }
 
 .leaderboard {
     width: 100%;
-    border: 5px solid var(--light-blue);
-    color: var(--light-blue);
+    border: 5px solid var(--text-font);
+    color: var(--text-font);
     background: var(--blue);
     border-collapse: collapse;
     table-layout: fixed;
@@ -340,7 +380,7 @@ img {
 }
 
 .leaderboard > thead {
-    border-bottom: 5px solid var(--light-blue);
+    border-bottom: 5px solid var(--text-font);
 }
 
 .leaderboard > thead > tr > th:first-child {
@@ -348,14 +388,14 @@ img {
 }
 
 .leaderboard > thead > tr > th {
-    border: 3px solid var(--light-blue);
+    border: 3px solid var(--text-font);
 }
 
 .row {
 }
 
 .row > td {
-    border: 3px solid var(--light-blue);
+    border: 3px solid var(--text-font);
 }
 
 .row > td:first-child {
@@ -363,5 +403,5 @@ img {
 }
 
 .row > td:last-child {
-    color: var(--dark-orange);
+    color: var(--accent-color);
 }
