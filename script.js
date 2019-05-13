@@ -2,6 +2,33 @@ function random(from, to) {
     return Math.floor(Math.random() * (to - from)) + from;
 }
 
+function groupBy(array, keyPath) {
+    return array.reduce((a, v) => {
+        const key = v[keyPath];
+        (a[key] = a[key] || []).push(v);
+        return a;
+    }, {})
+}
+
+function shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
 class Storage {
     static save(level, name, email, score) {
         const data = Storage.select();
@@ -44,23 +71,10 @@ class Game {
         }
     }
 
+
     shuffleAnswers(array) {
-        let currentIndex = array.length, temporaryValue, randomIndex;
-
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-
-            // Pick a remaining element...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-
-            // And swap it with the current element.
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-        }
-
-        return array;
+        const groups = groupBy(array, "factor");
+        return Object.keys(groups).sort((a, b) => parseFloat(a) - parseFloat(b)).reduce((a, v) => [...a, ...shuffle(groups[v])], []);
     }
 }
 
@@ -184,7 +198,7 @@ class AnswerButton {
         const img = document.createElement("img");
         img.src = src;
         img.classList.add("answer-img");
-        
+
         this.dom.appendChild(img);
         this.dom.addEventListener("click", this.handleClick);
     }
