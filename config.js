@@ -139,8 +139,8 @@ const levels = {
         "answers": [
             "img/content/gates.jpeg",
             "img/content/balmer.jpg",
-            "img/content/balmer-alt2.png",
             "img/content/balmer-alt.jpg",
+            "img/content/balmer-alt2.png",
         ],
         "right": 1,
         "factor": 1
