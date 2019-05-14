@@ -8,19 +8,19 @@ const levels = {
         "text": "Линус Торвальдс",
         "answers": [
             "img/content/torvalds.jpg",
-            "img/content/balmer.jpg",
-            "img/content/ma.jpg",
-            "img/content/gates.jpeg",
+            "img/content/tomplinson.jpg",
+            "img/content/eich.jpg",
+            "img/content/voznyak.jpg",
         ],
         "right": 0,
         "factor": 1
     }, {
         "text": "Илон Маск",
         "answers": [
-            "img/content/torvalds.jpg",
+            "img/content/bezos.jpg",
             "img/content/mask.jpg",
-            "img/content/ma.jpg",
-            "img/content/gates.jpeg",
+            "img/content/brin.jpg",
+            "img/content/page.jpg",
         ],
         "right": 1,
         "factor": 1
@@ -28,29 +28,29 @@ const levels = {
         "text": "Джефф Безос",
         "answers": [
             "img/content/bezos.jpg",
-            "img/content/mask.jpg",
-            "img/content/ma.jpg",
-            "img/content/gates.jpeg",
+            "img/content/brin.jpg",
+            "img/content/karmak.jpg",
+            "img/content/mitnik.jpg",
         ],
         "right": 0,
         "factor": 1
     }, {
         "text": "Марк Цукерберг",
         "answers": [
-            "img/content/bezos.jpg",
+            "img/content/wales.jpg",
             "img/content/mask.jpg",
             "img/content/zukerberg.jpg",
-            "img/content/gates.jpeg",
+            "img/content/zukerberg-alt.jpg",
         ],
         "right": 2,
         "factor": 1
     }, {
         "text": "Джек Ма",
         "answers": [
-            "img/content/bezos.jpg",
-            "img/content/mask.jpg",
+            "img/content/nadella.jpg",
+            "img/content/miyamoto.jpg",
             "img/content/ma.jpg",
-            "img/content/gates.jpeg",
+            "img/content/knoot.jpg",
         ],
         "right": 2,
         "factor": 1
@@ -58,19 +58,19 @@ const levels = {
         "text": "Тим Кук",
         "answers": [
             "img/content/bezos.jpg",
-            "img/content/mask.jpg",
+            "img/content/jobs.jpg",
             "img/content/cook.jpg",
-            "img/content/gates.jpeg",
+            "img/content/cook-alt.jpg",
         ],
         "right": 2,
         "factor": 1
     }, {
         "text": "Сатья Наделла",
         "answers": [
-            "img/content/bezos.jpg",
+            "img/content/miyamoto.jpg",
             "img/content/nadella.jpg",
             "img/content/ma.jpg",
-            "img/content/gates.jpeg",
+            "img/content/lavleys.jpg",
         ],
         "right": 1,
         "factor": 1
@@ -78,18 +78,18 @@ const levels = {
         "text": "Брендан Айк",
         "answers": [
             "img/content/eich.jpg",
-            "img/content/nadella.jpg",
-            "img/content/ma.jpg",
-            "img/content/gates.jpeg",
+            "img/content/balmer.jpg",
+            "img/content/berners-li.jpg",
+            "img/content/bezos.jpg",
         ],
         "right": 0,
         "factor": 1
     }, {
         "text": "Дональд Кнут",
         "answers": [
-            "img/content/bezos.jpg",
-            "img/content/nadella.jpg",
-            "img/content/ma.jpg",
+            "img/content/pazhitnov.jpg",
+            "img/content/ritchi.jpg",
+            "img/content/stollman.jpg",
             "img/content/knoot.jpg",
         ],
         "right": 3,
@@ -97,29 +97,29 @@ const levels = {
     }, {
         "text": "Билл Гейтс",
         "answers": [
-            "img/content/bezos.jpg",
-            "img/content/nadella.jpg",
+            "img/content/jobs.jpg",
+            "img/content/cook.jpg",
             "img/content/gates.jpeg",
-            "img/content/torvalds.jpg",
+            "img/content/allen.jpg",
         ],
         "right": 2,
         "factor": 1
     }, {
         "text": "Павел Дуров",
         "answers": [
-            "img/content/bezos.jpg",
-            "img/content/nadella.jpg",
+            "img/content/zukerberg.jpg",
+            "img/content/abramov.jpg",
             "img/content/durov.jpg",
-            "img/content/gates.jpeg",
+            "img/content/durov-alt.jpg",
         ],
         "right": 2,
         "factor": 1
     }, {
         "text": "Стив Джобс",
         "answers": [
-            "img/content/bezos.jpg",
-            "img/content/nadella.jpg",
-            "img/content/ma.jpg",
+            "img/content/voznyak.jpg",
+            "img/content/gates.jpeg",
+            "img/content/cook.jpg",
             "img/content/jobs.jpg",
         ],
         "right": 3,
@@ -127,30 +127,30 @@ const levels = {
     }, {
         "text": "Сергей Брин",
         "answers": [
-            "img/content/bezos.jpg",
+            "img/content/page.jpg",
             "img/content/brin.jpg",
-            "img/content/ma.jpg",
-            "img/content/gates.jpeg",
+            "img/content/wales.jpg",
+            "img/content/pazhitnov.jpg",
         ],
         "right": 1,
         "factor": 1
     }, {
         "text": "Стив Балмер",
         "answers": [
-            "img/content/bezos.jpg",
-            "img/content/balmer.jpg",
-            "img/content/ma.jpg",
             "img/content/gates.jpeg",
+            "img/content/balmer.jpg",
+            "img/content/balmer-alt2.png",
+            "img/content/balmer-alt.jpg",
         ],
         "right": 1,
         "factor": 1
     }, {
         "text": "Ларри Пейдж",
         "answers": [
-            "img/content/bezos.jpg",
-            "img/content/nadella.jpg",
+            "img/content/brin.jpg",
+            "img/content/mitnik.jpg",
             "img/content/page.jpg",
-            "img/content/gates.jpeg",
+            "img/content/allen.jpg",
         ],
         "right": 2,
         "factor": 1
@@ -158,16 +158,16 @@ const levels = {
         "text": "Алан Тьюринг",
         "answers": [
             "img/content/turing.jpg",
-            "img/content/nadella.jpg",
-            "img/content/page.jpg",
-            "img/content/gates.jpeg",
+            "img/content/turing-alt3.jpg",
+            "img/content/turing-alt2.jpg",
+            "img/content/turing-alt.jpg",
         ],
         "right": 0,
         "factor": 2
     }, {
         "text": "Тим Бернерс-Ли",
         "answers": [
-            "img/content/turing.jpg",
+            "img/content/bezos.jpg",
             "img/content/berners-li.jpg",
             "img/content/page.jpg",
             "img/content/gates.jpeg",
@@ -177,20 +177,20 @@ const levels = {
     }, {
         "text": "Алексей Пажитнов",
         "answers": [
-            "img/content/turing.jpg",
-            "img/content/berners-li.jpg",
             "img/content/pazhitnov.jpg",
-            "img/content/gates.jpeg",
+            "img/content/berners-li.jpg",
+            "img/content/kasperski.jpg",
+            "img/content/straustrup.jpg",
         ],
-        "right": 2,
+        "right": 0,
         "factor": 2
     }, {
         "text": "Стив Возняк",
         "answers": [
-            "img/content/turing.jpg",
-            "img/content/berners-li.jpg",
+            "img/content/jobs.jpg",
+            "img/content/torvalds.jpg",
             "img/content/voznyak.jpg",
-            "img/content/gates.jpeg",
+            "img/content/allen.jpg",
         ],
         "right": 2,
         "factor": 2
@@ -198,39 +198,39 @@ const levels = {
         "text": "Евгений Касперский",
         "answers": [
             "img/content/kasperski.jpg",
-            "img/content/berners-li.jpg",
             "img/content/voznyak.jpg",
-            "img/content/gates.jpeg",
+            "img/content/pazhitnov.jpg",
+            "img/content/tomplinson.jpg",
         ],
         "right": 0,
         "factor": 2
     }, {
         "text": "Сигэру Миямото",
         "answers": [
-            "img/content/kasperski.jpg",
-            "img/content/berners-li.jpg",
+            "img/content/ma.jpg",
+            "img/content/nadella.jpg",
             "img/content/miyamoto.jpg",
-            "img/content/gates.jpeg",
+            "img/content/kojima.jpg",
         ],
         "right": 2,
         "factor": 2
     }, {
         "text": "Джимми Уэйлс",
         "answers": [
-            "img/content/kasperski.jpg",
+            "img/content/straustrup.jpg",
             "img/content/berners-li.jpg",
             "img/content/wales.jpg",
-            "img/content/gates.jpeg",
+            "img/content/ritchi.jpg",
         ],
         "right": 2,
         "factor": 2
     }, {
         "text": "Деннис Ритчи",
         "answers": [
-            "img/content/kasperski.jpg",
-            "img/content/berners-li.jpg",
-            "img/content/wales.jpg",
-            "img/content/ritchi.jpeg",
+            "img/content/knoot.jpg",
+            "img/content/tomplinson.jpg",
+            "img/content/stollman.jpg",
+            "img/content/ritchi.jpg",
         ],
         "right": 3,
         "factor": 2
@@ -238,19 +238,19 @@ const levels = {
         "text": "Ада Лавлейс",
         "answers": [
             "img/content/lavleys.jpg",
-            "img/content/berners-li.jpg",
-            "img/content/wales.jpg",
-            "img/content/ritchi.jpeg",
+            "img/content/lammar.jpg",
+            "img/content/woods.jpg",
+            "img/content/goldberg.jpg",
         ],
         "right": 0,
         "factor": 3
     }, {
         "text": "Джон Кармак",
         "answers": [
-            "img/content/lavleys.jpg",
+            "img/content/page.jpg",
             "img/content/berners-li.jpg",
-            "img/content/wales.jpg",
-            "img/content/karmak.jpeg",
+            "img/content/romero.jpg",
+            "img/content/karmak.jpg",
         ],
         "right": 3,
         "factor": 3
@@ -258,9 +258,9 @@ const levels = {
         "text": "Рэй Томлинсон",
         "answers": [
             "img/content/tomplinson.jpg",
-            "img/content/berners-li.jpg",
-            "img/content/wales.jpg",
-            "img/content/karmak.jpeg",
+            "img/content/straustrup.jpg",
+            "img/content/kasperski.jpg",
+            "img/content/mitnik.jpg",
         ],
         "right": 0,
         "factor": 3
@@ -268,9 +268,9 @@ const levels = {
         "text": "Ричард Столлман",
         "answers": [
             "img/content/tomplinson.jpg",
-            "img/content/berners-li.jpg",
+            "img/content/torvalds.jpg",
             "img/content/stollman.jpg",
-            "img/content/karmak.jpeg",
+            "img/content/romero.jpg",
         ],
         "right": 2,
         "factor": 3
@@ -278,19 +278,19 @@ const levels = {
         "text": "Бьёрн Страуструп",
         "answers": [
             "img/content/tomplinson.jpg",
-            "img/content/berners-li.jpg",
+            "img/content/allen.jpg",
             "img/content/straustrup.jpg",
-            "img/content/karmak.jpeg",
+            "img/content/eich.jpg",
         ],
         "right": 2,
         "factor": 3
     }, {
         "text": "Кевин Митник",
         "answers": [
-            "img/content/tomplinson.jpg",
-            "img/content/berners-li.jpg",
-            "img/content/straustrup.jpg",
-            "img/content/mitnik.jpeg",
+            "img/content/page.jpg",
+            "img/content/pazhitnov.jpg",
+            "img/content/brin.jpg",
+            "img/content/mitnik.jpg",
         ],
         "right": 3,
         "factor": 3
