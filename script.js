@@ -189,9 +189,16 @@ class AnswerButton {
         this.dom.classList.add("disabled");
     }
 
+    wrongAnswer() {
+        this.isDisabled = true;
+        this.dom.removeEventListener("click", this.handleClick);
+        this.dom.classList.add("hidden");
+    }
+
     setAnswer(index, src, isRight) {
         this.isDisabled = false;
         this.dom.classList.remove("disabled");
+        this.dom.classList.remove("hidden");
         this.index = index;
         this.isRight = isRight;
         this.clearAnswer();
@@ -332,9 +339,9 @@ class GamePage {
         this.help5050Button.classList.add("invisible");
         const firstWrongAnswer = this.answers.filter(x => !x.isRight)[random(0, 3)];
         const secondWrongAnswer = this.answers.filter(x => !x.isRight && x.index !== firstWrongAnswer.index)[random(0, 2)];
-        firstWrongAnswer.disable();
+        firstWrongAnswer.wrongAnswer();
         firstWrongAnswer.clearAnswer();
-        secondWrongAnswer.disable();
+        secondWrongAnswer.wrongAnswer();
         secondWrongAnswer.clearAnswer();
     }
 }

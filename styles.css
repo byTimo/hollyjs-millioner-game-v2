@@ -19,8 +19,8 @@ label {
     position: absolute;
     top: 2px;
     left: 2px;
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     background: var(--background-white);
     color: var(--accent-color);
     border-radius: 50px;
@@ -38,8 +38,8 @@ label {
 
 .spiner {
     background: var(--text-font);
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
     position: relative;
     border-radius: 50px;
 }
@@ -52,7 +52,7 @@ label {
     height: 0;
     background: transparent;
     border-radius: 50px;
-    border: 26px solid transparent;
+    border: 27px solid transparent;
     border-top-color: var(--accent-color);
     transform: rotate(-45deg);
 }
@@ -95,7 +95,7 @@ label {
     height: 0;
     background: transparent;
     border-radius: 50px;
-    border: 26px solid transparent;
+    border: 27px solid transparent;
     border-top-color: var(--text-font);
     transform: rotate(-45deg);
 }
@@ -121,7 +121,7 @@ label {
     height: 0;
     background: transparent;
     border-radius: 50px;
-    border: 26px solid transparent;
+    border: 27px solid transparent;
     border-top-color: var(--accent-color);
     transform: rotate(45deg);
     opacity: 0;
@@ -229,6 +229,27 @@ body {
     border: none;
     width: 250px;
     overflow: hidden;
+    position: absolute;
+}
+
+.answer-1 {
+    top: 0;
+    left: 0;
+}
+
+.answer-2 {
+    top: 0;
+    right: 0;
+}
+
+.answer-3 {
+    bottom: 0;
+    left: 0;
+}
+
+.answer-4 {
+    bottom: 0;
+    right: 0;
 }
 
 .registration {
@@ -258,12 +279,11 @@ body {
     font-size: 24px;;
 }
 
-.answers {    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.answers {
+    position: relative;
     width: 700px;
     margin: 0 auto;
+    height: 560px;
 }
 
 @keyframes good {
@@ -316,7 +336,6 @@ body {
     color: var(--text-font);
     border: 2px solid var(--text-font);
     padding: 0 24px 0;
-    margin: 10px 0;
     min-width: 120px;
     font-size: 24px;
     font-weight: 600;
@@ -333,6 +352,10 @@ body {
     color: var(--accent-color);
     border-color: var(--accent-color);
     outline: none;
+}
+
+.hidden {
+    display: none;
 }
 
 .person {
@@ -366,6 +389,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin: 10px 0;
 }
 
 .leaderboard {
