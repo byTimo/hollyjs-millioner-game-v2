@@ -202,8 +202,8 @@ class AnswerButton {
         this.index = index;
         this.isRight = isRight;
         this.clearAnswer();
-        const img = document.createElement("img");
-        img.src = src;
+        const img = document.createElement("div");
+        img.style.backgroundImage = `url(${src})`;
         img.classList.add("answer-img");
 
         this.dom.appendChild(img);
@@ -330,7 +330,7 @@ class GamePage {
     }
 
     createTaskTag(task) {
-        const p = document.createElement("pre");
+        const p = document.createElement("div");
         p.textContent = task.text;
         return p;
     }

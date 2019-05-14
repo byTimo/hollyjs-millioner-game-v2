@@ -156,7 +156,10 @@ body {
 }
 
 .answer-img {
-    width: auto;
+    width: 320px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
 }
 
 .root {
@@ -227,9 +230,11 @@ body {
 .answer-button {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 25px 0;
     border: none;
-    width: 250px;
     overflow: hidden;
     position: absolute;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .answer-1 {
@@ -276,14 +281,14 @@ body {
     justify-content: center;
     margin: 10px 0;
     color: var(--text-font);
-    font-size: 24px;;
+    font-size: 36px;;
 }
 
 .answers {
     position: relative;
     width: 700px;
     margin: 0 auto;
-    height: 560px;
+    height: 650px;
 }
 
 @keyframes good {
