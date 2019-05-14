@@ -399,38 +399,35 @@ body {
 
 .leaderboard {
     width: 100%;
-    border: 5px solid var(--text-font);
     color: var(--text-font);
-    background: var(--blue);
     border-collapse: collapse;
     table-layout: fixed;
     font-size: 24px;
     text-align: center;
 }
 
-.leaderboard > thead {
-    border-bottom: 5px solid var(--text-font);
+td, th {
+    text-align: left;
+}
+
+td {
+    padding: 5px 0;
+}
+
+th {
+    padding: 0.5em 0 1em;
+}
+
+.leaderboard-head {
+    font-size: 36px;
 }
 
 .leaderboard > thead > tr > th:first-child {
     width: 75px;
 }
 
-.leaderboard > thead > tr > th {
-    border: 3px solid var(--text-font);
-}
-
-.row {
-}
-
-.row > td {
-    border: 3px solid var(--text-font);
-}
-
-.row > td:first-child {
-    color: var(--orange);
-}
-
-.row > td:last-child {
+.row:first-child,
+.row:nth-child(2),
+.row:nth-child(3) {
     color: var(--accent-color);
 }

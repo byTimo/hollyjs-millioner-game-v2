@@ -41,7 +41,7 @@ class Storage {
 
         data[level] = levelData;
 
-        localStorage.setItem("holyJs", JSON.stringify(data));
+        localStorage.setItem("konturface", JSON.stringify(data));
     }
 
     static get(name) {
@@ -50,7 +50,7 @@ class Storage {
     }
 
     static select() {
-        const data = localStorage.getItem("holyJs")
+        const data = localStorage.getItem("konturface")
         return data ? JSON.parse(data) : {};
     }
 }

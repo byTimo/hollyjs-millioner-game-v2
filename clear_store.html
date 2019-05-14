@@ -28,18 +28,18 @@
     <script src="./config.js"></script>
     <script>
         function deleteScore(score, tr, body) {
-            let data = localStorage.getItem("holyJs")
+            let data = localStorage.getItem("konturface")
             data = data ? JSON.parse(data) : {};
             const levelData = data[config.level] ? data[config.level] : {};
             delete levelData[score.name];
             data[config.level] = levelData;
-            localStorage.setItem("holyJs", JSON.stringify(data));
+            localStorage.setItem("konturface", JSON.stringify(data));
             body.removeChild(tr);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
             const container = document.querySelector(".tbody");
-            const raw = localStorage.getItem("holyJs");
+            const raw = localStorage.getItem("konturface");
             const playerScores = raw ? JSON.parse(raw)[config.level] : {};
             const scores = [];
 
