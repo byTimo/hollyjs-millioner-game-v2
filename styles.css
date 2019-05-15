@@ -1,9 +1,7 @@
 :root {
     --text-font: #333;
-    --blue: rgb(3, 14, 51);
     --background-blue: #eee;
     --background-white: white;
-    --orange: rgb(255, 204, 0);
     --accent-color: #E52E37;
     --green: rgb(102, 204, 0);
 }
@@ -213,14 +211,11 @@ body {
 }
 
 .button.disabled {
-    color: var(--blue);
     cursor: not-allowed;
 }
 
 .button.disabled:hover {
-    color: var(--blue);
     border-color: var(--text-font);
-    background-color: var(--blue);
 }
 
 .answer-wrapper {
@@ -375,21 +370,6 @@ body {
     transform: rotate(40deg);
 }
 
-.personPhrase {
-    position: absolute;
-    left: 0;
-    top: 400px;
-    background-color: var(--blue);
-    border: 5px solid var(--text-font);
-    color: var(--text-font);
-    font-size: 16px;
-    font-weight: 500;
-    padding: 20px;
-    border-radius: 25px;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
 .menu {
     display: flex;
     align-items: center;
@@ -429,5 +409,17 @@ th {
 .row:first-child,
 .row:nth-child(2),
 .row:nth-child(3) {
+    color: var(--accent-color);
+}
+
+.lives-wrapper {
+    position: absolute;
+    left: 100px;
+    top: 21px;
+    font-size: 24px;
+}
+
+.lives {
+    font-weight: 600;
     color: var(--accent-color);
 }
