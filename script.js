@@ -251,9 +251,11 @@ class GamePage {
         }
         this.rounds = [...tasks];
         this.currentRoundIndex = 0;
+        this.lives = config.lives;
 
         this.page = document.querySelector(".game");
         this.taskContainer = document.querySelector(".task");
+        this.livesContainer = document.querySelector(".lives");
         this.answer = this.answer.bind(this);
         this.answers = [1, 2, 3, 4].map(x => new AnswerButton(document.querySelector(`.answer-${x}`), this.answer));
         this.help5050Button = document.querySelector(".help5050");
@@ -266,6 +268,7 @@ class GamePage {
         this.help5050Button.classList.remove("invisible");
         this.help5050Button.addEventListener("click", this.help5050);
         this.page.classList.remove("invisible");
+        this.livesContainer.textContent = this.lives;
     }
 
     run() {
@@ -290,36 +293,50 @@ class GamePage {
         this.timer.stop();
         this.answers.map(x => x.disable());
         const round = this.rounds[this.currentRoundIndex];
-        round.right === number ? this.nextRound(number, round.factor) : this.loose(round.right, number);
+        round.right === number ? this.rightAnswer(number, round.factor) : this.badAnswer(round.right, number);
     }
 
-    nextRound(number, factor) {
-        this.answers[number].good();
-        this.result.score += factor * this.timer.state / 100;
+    nextRound() {
         this.currentRoundIndex++;
+        if (this.currentRoundIndex === this.rounds.length) {
+            return this.end();
+        }
+        this.renderRound(this.currentRoundIndex);
+    }
+
+    rightAnswer(number, factor) {
+        this.answers[number].good();
+        this.result.score += this.lives * factor * this.timer.state / 100;
         setTimeout(() => {
             this.answers[number].reset();
-            if (this.currentRoundIndex === this.rounds.length) {
-                return this.end();
-            }
-            this.renderRound(this.currentRoundIndex);
+            this.nextRound();
         }, 1000)
     }
 
-    loose(rightAnswer, number) {
+    badAnswer(rightAnswer, number) {
         this.answers[number].bad();
         this.answers[rightAnswer].good();
         setTimeout(() => {
             this.answers[number].reset();
-            this.answers[number].reset();
-            this.end()
+            this.answers[rightAnswer].reset();
+            this.decrementLives();
+            if (this.lives > 0) {
+                this.nextRound()
+            } else {
+                this.end()
+            }
         }, 2000);
+    }
+
+    decrementLives() {
+        this.lives = this.lives - 1;
+        this.livesContainer.textContent = this.lives;
     }
 
     renderRound(number) {
         this.clearTask();
         this.taskContainer.appendChild(this.createTaskTag(this.rounds[number]));
-        this.rounds[number].answers.map((x, i) => this.answers[i].setAnswer(i, x, i === this.rounds[number].rightAnswer));
+        this.rounds[number].answers.map((x, i) => this.answers[i].setAnswer(i, x, i === this.rounds[number].right));
         this.timer.start();
     }
 
