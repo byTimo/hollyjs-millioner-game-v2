@@ -41,7 +41,7 @@ class Storage {
 
         data[level] = levelData;
 
-        localStorage.setItem("holyJs", JSON.stringify(data));
+        localStorage.setItem("konturface", JSON.stringify(data));
     }
 
     static get(name) {
@@ -50,7 +50,7 @@ class Storage {
     }
 
     static select() {
-        const data = localStorage.getItem("holyJs")
+        const data = localStorage.getItem("konturface")
         return data ? JSON.parse(data) : {};
     }
 }
@@ -189,14 +189,21 @@ class AnswerButton {
         this.dom.classList.add("disabled");
     }
 
+    wrongAnswer() {
+        this.isDisabled = true;
+        this.dom.removeEventListener("click", this.handleClick);
+        this.dom.classList.add("hidden");
+    }
+
     setAnswer(index, src, isRight) {
         this.isDisabled = false;
         this.dom.classList.remove("disabled");
+        this.dom.classList.remove("hidden");
         this.index = index;
         this.isRight = isRight;
         this.clearAnswer();
-        const img = document.createElement("img");
-        img.src = src;
+        const img = document.createElement("div");
+        img.style.backgroundImage = `url(${src})`;
         img.classList.add("answer-img");
 
         this.dom.appendChild(img);
@@ -323,7 +330,7 @@ class GamePage {
     }
 
     createTaskTag(task) {
-        const p = document.createElement("pre");
+        const p = document.createElement("div");
         p.textContent = task.text;
         return p;
     }
@@ -332,9 +339,9 @@ class GamePage {
         this.help5050Button.classList.add("invisible");
         const firstWrongAnswer = this.answers.filter(x => !x.isRight)[random(0, 3)];
         const secondWrongAnswer = this.answers.filter(x => !x.isRight && x.index !== firstWrongAnswer.index)[random(0, 2)];
-        firstWrongAnswer.disable();
+        firstWrongAnswer.wrongAnswer();
         firstWrongAnswer.clearAnswer();
-        secondWrongAnswer.disable();
+        secondWrongAnswer.wrongAnswer();
         secondWrongAnswer.clearAnswer();
     }
 }
