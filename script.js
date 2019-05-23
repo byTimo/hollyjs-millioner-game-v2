@@ -259,7 +259,7 @@ class GamePage {
         this.answer = this.answer.bind(this);
         this.answers = [1, 2, 3, 4].map(x => new AnswerButton(document.querySelector(`.answer-${x}`), this.answer));
         this.help5050Button = document.querySelector(".help5050");
-        this.timer = new Timer(config.time, this.end.bind(this));
+        this.timer = new Timer(config.time, () => this.badAnswer(this.rounds[this.currentRoundIndex].right, null));
 
         this.help5050 = this.help5050.bind(this);
     }
@@ -314,10 +314,10 @@ class GamePage {
     }
 
     badAnswer(rightAnswer, number) {
-        this.answers[number].bad();
+        number && this.answers[number].bad();
         this.answers[rightAnswer].good();
         setTimeout(() => {
-            this.answers[number].reset();
+            number && this.answers[number].reset();
             this.answers[rightAnswer].reset();
             this.decrementLives();
             if (this.lives > 0) {
