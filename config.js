@@ -1,13 +1,14 @@
 ﻿const config = {
     level: "general",
-    time: 20000,
+    time: 50000,
     lives: 3
 }
 
 const levels = {
     "general": [
     {
-        "text": "Линус Торвальдс",
+        "name": "Линус Торвальдс",
+        "description": "Создатель ядра Linux",
         "answers": [
             "img/content/torvalds.jpg",
             "img/content/tomplinson.jpg",
@@ -17,7 +18,8 @@ const levels = {
         "right": 0,
         "factor": 1
     }, {
-        "text": "Илон Маск",
+        "name": "Илон Маск",
+        "description": "Is there life on Mars?",
         "answers": [
             "img/content/bezos.jpg",
             "img/content/mask.jpg",
@@ -27,7 +29,8 @@ const levels = {
         "right": 1,
         "factor": 1
     }, {
-        "text": "Джефф Безос",
+        "name": "Джефф Безос",
+        "description": "Глава и основатель Amazon",
         "answers": [
             "img/content/bezos.jpg",
             "img/content/brin.jpg",
@@ -37,7 +40,8 @@ const levels = {
         "right": 0,
         "factor": 1
     }, {
-        "text": "Марк Цукерберг",
+        "name": "Марк Цукерберг",
+        "description": "Глава и основатель Facebook",
         "answers": [
             "img/content/wales.jpg",
             "img/content/mask.jpg",
@@ -47,7 +51,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Джек Ма",
+        "name": "Джек Ма",
+        "description": "Основатель компании Alibaba",
         "answers": [
             "img/content/nadella.jpg",
             "img/content/miyamoto.jpg",
@@ -57,7 +62,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Тим Кук",
+        "name": "Тим Кук",
+        "description": "Глава Apple с 2011 года",
         "answers": [
             "img/content/bezos.jpg",
             "img/content/jobs.jpg",
@@ -67,7 +73,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Сатья Наделла",
+        "name": "Сатья Наделла",
+        "description": "Глава Microsoft с 2014 года",
         "answers": [
             "img/content/miyamoto.jpg",
             "img/content/nadella.jpg",
@@ -77,7 +84,8 @@ const levels = {
         "right": 1,
         "factor": 1
     }, {
-        "text": "Брендан Айк",
+        "name": "Брендан Айк",
+        "description": "Автор языка JavaScript",
         "answers": [
             "img/content/eich.jpg",
             "img/content/balmer.jpg",
@@ -87,7 +95,8 @@ const levels = {
         "right": 0,
         "factor": 1
     }, {
-        "text": "Дональд Кнут",
+        "name": "Дональд Кнут",
+        "description": "Учёный, профессор, автор серии книг «Искусство программирования»",
         "answers": [
             "img/content/pazhitnov.jpg",
             "img/content/ritchi.jpg",
@@ -97,7 +106,8 @@ const levels = {
         "right": 3,
         "factor": 1
     }, {
-        "text": "Билл Гейтс",
+        "name": "Билл Гейтс",
+        "description": "Создатель компании Microsoft",
         "answers": [
             "img/content/jobs.jpg",
             "img/content/cook.jpg",
@@ -107,7 +117,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Павел Дуров",
+        "name": "Павел Дуров",
+        "description": "Создатель ВКонтакте и Telegram",
         "answers": [
             "img/content/zukerberg.jpg",
             "img/content/abramov.jpg",
@@ -117,7 +128,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Стив Джобс",
+        "name": "Стив Джобс",
+        "description": "Основатель компании Apple",
         "answers": [
             "img/content/voznyak.jpg",
             "img/content/gates.jpeg",
@@ -127,7 +139,8 @@ const levels = {
         "right": 3,
         "factor": 1
     }, {
-        "text": "Сергей Брин",
+        "name": "Сергей Брин",
+        "description": "Разработчик и основатель Google",
         "answers": [
             "img/content/page.jpg",
             "img/content/brin.jpg",
@@ -137,7 +150,8 @@ const levels = {
         "right": 1,
         "factor": 1
     }, {
-        "text": "Стив Балмер",
+        "name": "Стив Балмер",
+        "description": "Глава Microsoft в 2000-2014 гг.",
         "answers": [
             "img/content/gates.jpeg",
             "img/content/balmer.jpg",
@@ -147,7 +161,8 @@ const levels = {
         "right": 1,
         "factor": 1
     }, {
-        "text": "Ларри Пейдж",
+        "name": "Ларри Пейдж",
+        "description": "Разработчик и основатель Google",
         "answers": [
             "img/content/brin.jpg",
             "img/content/mitnik.jpg",
@@ -157,7 +172,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Алан Тьюринг",
+        "name": "Алан Тьюринг",
+        "description": "Математик, логик и криптограф",
         "answers": [
             "img/content/turing.jpg",
             "img/content/turing-alt3.jpg",
@@ -167,7 +183,8 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Тим Бернерс-Ли",
+        "name": "Тим Бернерс-Ли",
+        "description": "Создатель Всемирной паутины, глава W3C",
         "answers": [
             "img/content/bezos.jpg",
             "img/content/berners-li.jpg",
@@ -177,7 +194,8 @@ const levels = {
         "right": 1,
         "factor": 2
     }, {
-        "text": "Алексей Пажитнов",
+        "name": "Алексей Пажитнов",
+        "description": "Создатель игры «Тетрис»",
         "answers": [
             "img/content/pazhitnov.jpg",
             "img/content/berners-li.jpg",
@@ -187,7 +205,8 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Стив Возняк",
+        "name": "Стив Возняк",
+        "description": "Соучредитель компании Apple, разработчик компьютеров Apple I и Apple II",
         "answers": [
             "img/content/jobs.jpg",
             "img/content/torvalds.jpg",
@@ -197,7 +216,8 @@ const levels = {
         "right": 2,
         "factor": 2
     }, {
-        "text": "Евгений Касперский",
+        "name": "Евгений Касперский",
+        "description": "Глава Лаборатории Касперского",
         "answers": [
             "img/content/kasperski.jpg",
             "img/content/voznyak.jpg",
@@ -207,7 +227,8 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Сигэру Миямото",
+        "name": "Сигэру Миямото",
+        "description": "",
         "answers": [
             "img/content/ma.jpg",
             "img/content/nadella.jpg",
@@ -217,7 +238,8 @@ const levels = {
         "right": 2,
         "factor": 2
     }, {
-        "text": "Джимми Уэйлс",
+        "name": "Джимми Уэйлс",
+        "description": "",
         "answers": [
             "img/content/straustrup.jpg",
             "img/content/berners-li.jpg",
@@ -227,7 +249,8 @@ const levels = {
         "right": 2,
         "factor": 2
     }, {
-        "text": "Деннис Ритчи",
+        "name": "Деннис Ритчи",
+        "description": "",
         "answers": [
             "img/content/knoot.jpg",
             "img/content/tomplinson.jpg",
@@ -237,7 +260,8 @@ const levels = {
         "right": 3,
         "factor": 2
     }, {
-        "text": "Ада Лавлейс",
+        "name": "Ада Лавлейс",
+        "description": "",
         "answers": [
             "img/content/lavleys.jpg",
             "img/content/lammar.jpg",
@@ -247,7 +271,8 @@ const levels = {
         "right": 0,
         "factor": 3
     }, {
-        "text": "Джон Кармак",
+        "name": "Джон Кармак",
+        "description": "",
         "answers": [
             "img/content/page.jpg",
             "img/content/berners-li.jpg",
@@ -257,7 +282,8 @@ const levels = {
         "right": 3,
         "factor": 3
     }, {
-        "text": "Рэй Томлинсон",
+        "name": "Рэй Томлинсон",
+        "description": "",
         "answers": [
             "img/content/tomplinson.jpg",
             "img/content/straustrup.jpg",
@@ -267,7 +293,8 @@ const levels = {
         "right": 0,
         "factor": 3
     }, {
-        "text": "Ричард Столлман",
+        "name": "Ричард Столлман",
+        "description": "",
         "answers": [
             "img/content/tomplinson.jpg",
             "img/content/torvalds.jpg",
@@ -277,7 +304,8 @@ const levels = {
         "right": 2,
         "factor": 3
     }, {
-        "text": "Бьёрн Страуструп",
+        "name": "Бьёрн Страуструп",
+        "description": "",
         "answers": [
             "img/content/tomplinson.jpg",
             "img/content/allen.jpg",
@@ -287,7 +315,8 @@ const levels = {
         "right": 2,
         "factor": 3
     }, {
-        "text": "Кевин Митник",
+        "name": "Кевин Митник",
+        "description": "",
         "answers": [
             "img/content/page.jpg",
             "img/content/pazhitnov.jpg",
@@ -298,244 +327,11 @@ const levels = {
         "factor": 3
     },
 
-    //heisenbug
-
-    // {
-    //     "text": "Алексей Баранцев",
-    //     "answers": [
-    //         "img/content/baranzev.jpeg",
-    //         "img/content/mitnik.jpg",
-    //         "img/content/allen.jpg",
-    //         "img/content/pazhitnov.jpg",
-    //     ],
-    //     "right": 0,
-    //     "factor": 1
-    // }, {
-    //     "text": "Сэм Канер",
-    //     "answers": [
-    //         "img/content/alexandrov.png",
-    //         "img/content/pazhitnov.jpg",
-    //         "img/content/caner.jpg",
-    //         "img/content/bach.jpeg",
-    //     ],
-    //     "right": 2,
-    //     "factor": 1
-    // }, {
-    //     "text": "Антон Семенченко",
-    //     "answers": [
-    //         "img/content/brin.jpg",
-    //         "img/content/baranzev.jpeg",
-    //         "img/content/semenchenko.jpg",
-    //         "img/content/tomplinson.jpg",
-    //     ],
-    //     "right": 2,
-    //     "factor": 1
-    // }, {
-    //     "text": "Наталья Руколь",
-    //     "answers": [
-    //         "img/content/nechaeva.jpg",
-    //         "img/content/rukol.jpg",
-    //         "img/content/goldberg.jpg",
-    //         "img/content/lisacrispinphoto.jpg",
-    //     ],
-    //     "right": 1,
-    //     "factor": 1
-    // }, {
-    //     "text": "Джеральд Вайнберг",
-    //     "answers": [
-    //         "img/content/vinogradov.jpg",
-    //         "img/content/ritchi.jpg",
-    //         "img/content/wineberg.jpg",
-    //         "img/content/caner.jpg",
-    //     ],
-    //     "right": 2,
-    //     "factor": 1
-    // }, {
-    //     "text": "Ли Копланд",
-    //     "answers": [
-    //         "img/content/bolton.jpg",
-    //         "img/content/eich.jpg",
-    //         "img/content/knoot.jpg",
-    //         "img/content/copland.jpg",
-    //     ],
-    //     "right": 3,
-    //     "factor": 1
-    // }, {
-    //     "text": "Джеймс Уиттакер",
-    //     "answers": [
-    //         "img/content/whittaker.jpg",
-    //         "img/content/vinogradov.jpg",
-    //         "img/content/allen.jpg",
-    //         "img/content/copland.jpg",
-    //     ],
-    //     "right": 0,
-    //     "factor": 1
-    // }, {
-    //     "text": "Джейсон Арбон",
-    //     "answers": [
-    //         "img/content/arbon.jpeg",
-    //         "img/content/bolton.jpg",
-    //         "img/content/pazhitnov.jpg",
-    //         "img/content/romero.jpg",
-    //     ],
-    //     "right": 0,
-    //     "factor": 1
-    // }, {
-    //     "text": "Джеймс Бах",
-    //     "answers": [
-    //         "img/content/bach.jpeg",
-    //         "img/content/gerrad.jpg",
-    //         "img/content/nadella.jpg",
-    //         "img/content/whittaker.jpg",
-    //     ],
-    //     "right": 0,
-    //     "factor": 1
-    // }, {
-    //     "text": "Алексей Лупан",
-    //     "answers": [
-    //         "img/content/nadella.jpg",
-    //         "img/content/page.jpg",
-    //         "img/content/savin.jpeg",
-    //         "img/content/lupan.jpg",
-    //     ],
-    //     "right": 3,
-    //     "factor": 1
-    // }, {
-    //     "text": "Александр Александров",
-    //     "answers": [
-    //         "img/content/arbon.jpeg",
-    //         "img/content/berners-li.jpg",
-    //         "img/content/alexandrov.png",
-    //         "img/content/beizer.png",
-    //     ],
-    //     "right": 2,
-    //     "factor": 1
-    // }, {
-    //     "text": "Арсений Батыров",
-    //     "answers": [
-    //         "img/content/batyrov.jpeg",
-    //         "img/content/abramov.jpg",
-    //         "img/content/gartner.jpg",
-    //         "img/content/karmak.jpg",
-    //     ],
-    //     "right": 0,
-    //     "factor": 1
-    // }, {
-    //     "text": "Алексей Виноградов",
-    //     "answers": [
-    //         "img/content/straustrup.jpg",
-    //         "img/content/vinogradov.jpg",
-    //         "img/content/knoot.jpg",
-    //         "img/content/karmak.jpg",
-    //     ],
-    //     "right": 1,
-    //     "factor": 1
-    // }, {
-    //     "text": "Джейсон Хаггинс",
-    //     "answers": [
-    //         "img/content/arbon.jpeg",
-    //         "img/content/huggins.jpg",
-    //         "img/content/berners-li.jpg",
-    //         "img/content/wales.jpg",
-    //     ],
-    //     "right": 1,
-    //     "factor": 1
-    // }, {
-    //     "text": "Майкл Болтон",
-    //     "answers": [
-    //         "img/content/eich.jpg",
-    //         "img/content/caner.jpg",
-    //         "img/content/bach.jpeg",
-    //         "img/content/bolton.jpg",
-    //     ],
-    //     "right": 3,
-    //     "factor": 1
-    // }, {
-    //     "text": "Маркус Гэртнер",
-    //     "answers": [
-    //         "img/content/page.jpg",
-    //         "img/content/gartner.jpg",
-    //         "img/content/mitnik.jpg",
-    //         "img/content/abramov.jpg",
-    //     ],
-    //     "right": 1,
-    //     "factor": 1
-    // }, {
-    //     "text": "Борис Бейзер",
-    //     "answers": [
-    //         "img/content/copland.jpg",
-    //         "img/content/beizer.png",
-    //         "img/content/wineberg.jpg",
-    //         "img/content/kasperski.jpg",
-    //     ],
-    //     "right": 1,
-    //     "factor": 1
-    // }, {
-    //     "text": "Роман Савин",
-    //     "answers": [
-    //         "img/content/savin.jpeg",
-    //         "img/content/meriin.png",
-    //         "img/content/gartner.jpg",
-    //         "img/content/alexandrov.png",
-    //     ],
-    //     "right": 0,
-    //     "factor": 1
-    // }, {
-    //     "text": "Лайза Криспин",
-    //     "answers": [
-    //         "img/content/goldberg.jpg",
-    //         "img/content/lisacrispinphoto.jpg",
-    //         "img/content/rukol.jpg",
-    //         "img/content/woods.jpg",
-    //     ],
-    //     "right": 1,
-    //     "factor": 1
-    // }, {
-    //     "text": "Пол Геррард",
-    //     "answers": [
-    //         "img/content/bolton.jpg",
-    //         "img/content/copland.jpg",
-    //         "img/content/caner.jpg",
-    //         "img/content/gerrad.jpg",
-    //     ],
-    //     "right": 3,
-    //     "factor": 1
-    // }, {
-    //     "text": "Михаил Мериин",
-    //     "answers": [
-    //         "img/content/straustrup.jpg",
-    //         "img/content/meriin.png",
-    //         "img/content/alexandrov.png",
-    //         "img/content/caner.jpg",
-    //     ],
-    //     "right": 1,
-    //     "factor": 1
-    // }, {
-    //     "text": "Макс Дорофеев",
-    //     "answers": [
-    //         "img/content/page.jpg",
-    //         "img/content/semenchenko.jpg",
-    //         "img/content/abramov.jpg",
-    //         "img/content/dorofeev.jpg",
-    //     ],
-    //     "right": 3,
-    //     "factor": 1
-    // }, {
-    //     "text": "Юлия Нечаева",
-    //     "answers": [
-    //         "img/content/goldberg.jpg",
-    //         "img/content/woods.jpg",
-    //         "img/content/rukol.jpg",
-    //         "img/content/nechaeva.jpg",
-    //     ],
-    //     "right": 3,
-    //     "factor": 1
-    // }
-
     //holyjs
 
     {
-        "text": "Андрей Ситник",
+        "name": "Андрей Ситник",
+        "description": "",
         "answers": [
             "img/content/makeev.jpg",
             "img/content/kot.jpg",
@@ -545,7 +341,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Вадим Макеев",
+        "name": "Вадим Макеев",
+        "description": "",
         "answers": [
             "img/content/romero.jpg",
             "img/content/makeev.jpg",
@@ -555,7 +352,8 @@ const levels = {
         "right": 1,
         "factor": 1
     }, {
-        "text": "Дэн Абрамов",
+        "name": "Дэн Абрамов",
+        "description": "",
         "answers": [
             "img/content/klimov.jpg",
             "img/content/durov.jpg",
@@ -565,7 +363,8 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Витайлий Фридман",
+        "name": "Витайлий Фридман",
+        "description": "",
         "answers": [
             "img/content/fedorov.jpg",
             "img/content/whittaker.jpg",
@@ -575,7 +374,8 @@ const levels = {
         "right": 3,
         "factor": 1
     }, {
-        "text": "Игорь Алексеенко",
+        "name": "Игорь Алексеенко",
+        "description": "",
         "answers": [
             "img/content/alexeenko.png",
             "img/content/simanenko.jpg",
@@ -585,7 +385,8 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Алексей Симоненко",
+        "name": "Алексей Симоненко",
+        "description": "",
         "answers": [
             "img/content/simanenko.jpg",
             "img/content/alexeenko.png",
@@ -595,17 +396,19 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Евгений Кот",
+        "name": "Евгений Кот",
+        "description": "",
         "answers": [
             "img/content/simanenko.jpg",
             "img/content/kot.jpg",
-            "img/content/korotaev.jpg",
+            "img/content/melihov.jpeg",
             "img/content/cat.jpg",
         ],
         "right": 1,
         "factor": 2
     }, {
-        "text": "Александр Коротаев",
+        "name": "Александр Коротаев",
+        "description": "",
         "answers": [
             "img/content/prokopov.jpeg",
             "img/content/korotaev.jpg",
@@ -615,7 +418,8 @@ const levels = {
         "right": 1,
         "factor": 1
     }, {
-        "text": "Лия Веру",
+        "name": "Лия Веру",
+        "description": "",
         "answers": [
             "img/content/verou.jpg",
             "img/content/kravetz.jpg",
@@ -625,7 +429,8 @@ const levels = {
         "right": 0,
         "factor": 1
     }, {
-        "text": "Дуглас Крокфорд",
+        "name": "Дуглас Крокфорд",
+        "description": "",
         "answers": [
             "img/content/crockford.jpg",
             "img/content/knoot.jpg",
@@ -635,29 +440,32 @@ const levels = {
         "right": 0,
         "factor": 1
     }, {
-        "text": "Роман Дворнов",
+        "name": "Роман Дворнов",
+        "description": "",
         "answers": [
             "img/content/ivanov.jpg",
-            "img/content/popov.jpg",
+            "img/content/melihov.jpeg",
             "img/content/klimov.jpg",
             "img/content/dvornov.jpg",
         ],
         "right": 3,
         "factor": 1
     }, {
-        "text": "Уна Кравец",
+        "name": "Уна Кравец",
+        "description": "",
         "answers": [
             "img/content/goldberg.jpg",
             "img/content/verou.jpg",
             "img/content/kravetz.jpg",
-            "img/content/woods.jpg",
+            "img/content/muzafarova.jpg",
         ],
         "right": 2,
         "factor": 2
     }, {
-        "text": "Алексей Золотых",
+        "name": "Алексей Золотых",
+        "description": "",
         "answers": [
-            "img/content/dvornov.jpg",
+            "img/content/melihov.jpeg",
             "img/content/zolotykh.jpg",
             "img/content/dorofeev.jpg",
             "img/content/alexeenko.png",
@@ -665,7 +473,8 @@ const levels = {
         "right": 1,
         "factor": 2
     }, {
-        "text": "Маттиас Петтер Йохансон (mpj)",
+        "name": "Маттиас Петтер Йохансон (mpj)",
+        "description": "",
         "answers": [
             "img/content/mpj.png",
             "img/content/karmak.jpg",
@@ -675,17 +484,19 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Илья Климов",
+        "name": "Илья Климов",
+        "description": "",
         "answers": [
             "img/content/klimov.jpg",
             "img/content/dvornov.jpg",
-            "img/content/makeev.jpg",
+            "img/content/dubko.png",
             "img/content/prokopov.jpeg",
         ],
         "right": 0,
         "factor": 1
     }, {
-        "text": "Виктор Грищенко",
+        "name": "Виктор Грищенко",
+        "description": "",
         "answers": [
             "img/content/caner.jpg",
             "img/content/arbon.jpeg",
@@ -695,7 +506,8 @@ const levels = {
         "right": 2,
         "factor": 2
     }, {
-        "text": "Андрей Нагих",
+        "name": "Андрей Нагих",
+        "description": "",
         "answers": [
             "img/content/zolotykh.jpg",
             "img/content/nagikh.jpg",
@@ -705,7 +517,8 @@ const levels = {
         "right": 1,
         "factor": 2
     }, {
-        "text": "Алексей Охрименко",
+        "name": "Алексей Охрименко",
+        "description": "",
         "answers": [
             "img/content/bolton.jpg",
             "img/content/kasperski.jpg",
@@ -715,7 +528,8 @@ const levels = {
         "right": 2,
         "factor": 2
     }, {
-        "text": "Мартин Сплитт",
+        "name": "Мартин Сплитт",
+        "description": "",
         "answers": [
             "img/content/tomplinson.jpg",
             "img/content/fridman.jpg",
@@ -725,17 +539,19 @@ const levels = {
         "right": 2,
         "factor": 1
     }, {
-        "text": "Мария Просвирнина",
+        "name": "Мария Просвирнина",
+        "description": "",
         "answers": [
             "img/content/seleznerva.jpg",
-            "img/content/shinkevitch.jpg",
+            "img/content/alexashenko.png",
             "img/content/lammar.jpg",
             "img/content/prosvirnina.jpg",
         ],
         "right": 3,
         "factor": 2
     }, {
-        "text": "Андрей Смирнов",
+        "name": "Андрей Смирнов",
+        "description": "",
         "answers": [
             "img/content/yamanov.png",
             "img/content/smirnov.jpg",
@@ -745,7 +561,8 @@ const levels = {
         "right": 1,
         "factor": 2
     }, {
-        "text": "Джон Резиг",
+        "name": "Джон Резиг",
+        "description": "",
         "answers": [
             "img/content/rezig.jpg",
             "img/content/klimov.jpg",
@@ -755,7 +572,8 @@ const levels = {
         "right": 0,
         "factor": 1
     }, {
-        "text": "Эван Ю",
+        "name": "Эван Ю",
+        "description": "",
         "answers": [
             "img/content/u.jpeg",
             "img/content/nadella.jpg",
@@ -765,7 +583,8 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Джордан Валке",
+        "name": "Джордан Валке",
+        "description": "",
         "answers": [
             "img/content/abramov.jpg",
             "img/content/walke.jpg",
@@ -775,7 +594,8 @@ const levels = {
         "right": 1,
         "factor": 3
     }, {
-        "text": "Кайл Симпсон",
+        "name": "Кайл Симпсон",
+        "description": "",
         "answers": [
             "img/content/crockford.jpg",
             "img/content/eich.jpg",
@@ -785,9 +605,10 @@ const levels = {
         "right": 2,
         "factor": 2
     }, {
-        "text": "Анна Селезнёва",
+        "name": "Анна Селезнёва",
+        "description": "",
         "answers": [
-            "img/content/kravetz.jpg",
+            "img/content/anikeeva.jpeg",
             "img/content/prosvirnina.jpg",
             "img/content/shinkevitch.jpg",
             "img/content/seleznerva.jpg",
@@ -795,7 +616,8 @@ const levels = {
         "right": 3,
         "factor": 2
     }, {
-        "text": "Григорий Бакунов",
+        "name": "Григорий Бакунов",
+        "description": "",
         "answers": [
             "img/content/bakunov.jpg",
             "img/content/kasperski.jpg",
@@ -805,7 +627,8 @@ const levels = {
         "right": 0,
         "factor": 1
     }, {
-        "text": "Никита Прокопов",
+        "name": "Никита Прокопов",
+        "description": "",
         "answers": [
             "img/content/kot.jpg",
             "img/content/prokopov.jpeg",
@@ -815,7 +638,8 @@ const levels = {
         "right": 1,
         "factor": 2
     }, {
-        "text": "Владислав Козуля",
+        "name": "Владислав Козуля",
+        "description": "",
         "answers": [
             "img/content/dvornov.jpg",
             "img/content/kozulya.jpeg",
@@ -825,7 +649,8 @@ const levels = {
         "right": 1,
         "factor": 1
     }, {
-        "text": "Саша Шинкевич",
+        "name": "Саша Шинкевич",
+        "description": "",
         "answers": [
             "img/content/verou.jpg",
             "img/content/shinkevitch.jpg",
@@ -835,7 +660,8 @@ const levels = {
         "right": 1,
         "factor": 2
     }, {
-        "text": "Райан Дал",
+        "name": "Райан Дал",
+        "description": "",
         "answers": [
             "img/content/smirnov.jpg",
             "img/content/whittaker.jpg",
@@ -845,7 +671,8 @@ const levels = {
         "right": 2,
         "factor": 2
     }, {
-        "text": "Сергей Рубанов",
+        "name": "Сергей Рубанов",
+        "description": "",
         "answers": [
             "img/content/rubanov.jpg",
             "img/content/mpj.png",
@@ -855,7 +682,8 @@ const levels = {
         "right": 0,
         "factor": 2
     }, {
-        "text": "Мартин Клэпп",
+        "name": "Мартин Клэпп",
+        "description": "",
         "answers": [
             "img/content/rubanov.jpg",
             "img/content/dal.jpg",
@@ -865,7 +693,8 @@ const levels = {
         "right": 3,
         "factor": 3
     }, {
-        "text": "Джереми Кит",
+        "name": "Джереми Кит",
+        "description": "",
         "answers": [
             "img/content/wales.jpg",
             "img/content/ivanov.jpg",
@@ -875,17 +704,19 @@ const levels = {
         "right": 3,
         "factor": 2
     }, {
-        "text": "Владимир Кузнецов",
+        "name": "Владимир Кузнецов",
+        "description": "",
         "answers": [
             "img/content/copland.jpg",
             "img/content/kuznetsov.jpg",
-            "img/content/grishenko.jpg",
+            "img/content/grinenko.jpeg",
             "img/content/pazhitnov.jpg",
         ],
         "right": 1,
         "factor": 2
     }, {
-        "text": "Райан Флоренс",
+        "name": "Райан Флоренс",
+        "description": "",
         "answers": [
             "img/content/florens.jpeg",
             "img/content/page.jpg",
@@ -895,7 +726,8 @@ const levels = {
         "right": 0,
         "factor": 3
     }, {
-        "text": "Джейк Арчибальд",
+        "name": "Джейк Арчибальд",
+        "description": "",
         "answers": [
             "img/content/alexeenko.png",
             "img/content/archibald.png",
@@ -905,7 +737,8 @@ const levels = {
         "right": 1,
         "factor": 3
     }, {
-        "text": "Андерс Хейлсберг",
+        "name": "Андерс Хейлсберг",
+        "description": "",
         "answers": [
             "img/content/knoot.jpg",
             "img/content/heilsberg.jpg",
@@ -914,7 +747,75 @@ const levels = {
         ],
         "right": 1,
         "factor": 3
-    }
+    },
 
-    ]
+    //wsd
+
+    {
+        "name": "Юлия Музафарова",
+        "description": "",
+        "answers": [
+            "img/content/seleznerva.jpg",
+            "img/content/muzafarova.jpg",
+            "img/content/shinkevitch.jpg",
+            "img/content/kravetz.jpg",
+        ],
+        "right": 1,
+        "factor": 3
+    }, {
+        "name": "Владимир Гриненко",
+        "description": "",
+        "answers": [
+            "img/content/dorofeev.jpg",
+            "img/content/grishenko.jpg",
+            "img/content/grinenko.jpeg",
+            "img/content/klimov.jpg",
+        ],
+        "right": 2,
+        "factor": 3
+    }, {
+        "name": "Ольга Алексашенко",
+        "description": "",
+        "answers": [
+            "img/content/muzafarova.jpg",
+            "img/content/shinkevitch.jpg",
+            "img/content/prosvirnina.jpg",
+            "img/content/alexashenko.png",
+        ],
+        "right": 3,
+        "factor": 3
+    }, {
+        "name": "Мария Аникеева",
+        "description": "",
+        "answers": [
+            "img/content/anikeeva.jpeg",
+            "img/content/alexashenko.png",
+            "img/content/verou.jpg",
+            "img/content/muzafarova.jpg",
+        ],
+        "right": 0,
+        "factor": 3
+    }, {
+        "name": "Андрей Мелихов",
+        "description": "",
+        "answers": [
+            "img/content/melihov.jpeg",
+            "img/content/kot.jpg",
+            "img/content/prokopov.jpeg",
+            "img/content/smirnov.jpg",
+        ],
+        "right": 0,
+        "factor": 3
+    }, {
+        "name": "Никита Дубко",
+        "description": "",
+        "answers": [
+            "img/content/klimov.jpg",
+            "img/content/dubko.png",
+            "img/content/grinenko.jpeg",
+            "img/content/yamanov.png",
+        ],
+        "right": 1,
+        "factor": 3
+    }]
 };
