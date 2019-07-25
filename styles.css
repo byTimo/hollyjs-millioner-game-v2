@@ -1,5 +1,6 @@
 :root {
     --text-font: #333;
+    --text-secondary: #999;
     --background-blue: #eee;
     --background-white: white;
     --accent-color: #E52E37;
@@ -158,6 +159,7 @@ body {
     height: 250px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .root {
@@ -274,9 +276,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0;
+    padding-top: 10px;
     color: var(--text-font);
     font-size: 36px;;
+}
+
+.description {
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
 }
 
 .answers {
@@ -374,7 +384,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin: 10px 0;
+    padding: 20px 0 0;
 }
 
 .leaderboard {
@@ -422,4 +432,16 @@ th {
 .lives {
     font-weight: 600;
     color: var(--accent-color);
+}
+
+.button-inner {
+    background-color: white;
+}
+
+.game-name {
+    color: var(--accent-color);
+    font-size: 80px;
+    margin-top: 0;
+    padding-top: 30px;
+    font-weight: normal;
 }

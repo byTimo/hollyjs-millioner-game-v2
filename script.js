@@ -178,6 +178,7 @@ class Timer {
 class AnswerButton {
     constructor(dom, callback) {
         this.dom = dom;
+        this.root = dom.getElementsByClassName("button-inner")[0];
         this.callback = callback;
         this.reset();
         this.handleClick = this.handleClick.bind(this);
@@ -206,13 +207,13 @@ class AnswerButton {
         img.style.backgroundImage = `url(${src})`;
         img.classList.add("answer-img");
 
-        this.dom.appendChild(img);
+        this.root.appendChild(img);
         this.dom.addEventListener("click", this.handleClick);
     }
 
     clearAnswer() {
-        if (this.dom.firstChild) {
-            this.dom.removeChild(this.dom.firstChild);
+        if (this.root.firstChild) {
+            this.root.removeChild(this.root.firstChild);
         }
     }
 
@@ -248,13 +249,14 @@ class GamePage {
             name: user.name,
             email: user.email,
             score: 0
-        }
+        };
         this.rounds = [...tasks];
         this.currentRoundIndex = 0;
         this.lives = config.lives;
 
         this.page = document.querySelector(".game");
         this.taskContainer = document.querySelector(".task");
+        this.descriptionContainer = document.querySelector(".description");
         this.livesContainer = document.querySelector(".lives");
         this.answer = this.answer.bind(this);
         this.answers = [1, 2, 3, 4].map(x => new AnswerButton(document.querySelector(`.answer-${x}`), this.answer));
@@ -281,6 +283,7 @@ class GamePage {
         this.help5050Button.removeEventListener("click", this.help5050);
         this.timer.stop();
         this.clearTask();
+        this.clearDescription();
         this.page.classList.add("invisible");
     }
 
@@ -314,10 +317,10 @@ class GamePage {
     }
 
     badAnswer(rightAnswer, number) {
-        number && this.answers[number].bad();
+        number !== null && this.answers[number].bad();
         this.answers[rightAnswer].good();
         setTimeout(() => {
-            number && this.answers[number].reset();
+            number !== null && this.answers[number].reset();
             this.answers[rightAnswer].reset();
             this.decrementLives();
             if (this.lives > 0) {
@@ -335,7 +338,9 @@ class GamePage {
 
     renderRound(number) {
         this.clearTask();
+        this.clearDescription();
         this.taskContainer.appendChild(this.createTaskTag(this.rounds[number]));
+        this.descriptionContainer.appendChild(this.createDescriptionTag(this.rounds[number]));
         this.rounds[number].answers.map((x, i) => this.answers[i].setAnswer(i, x, i === this.rounds[number].right));
         this.timer.start();
     }
@@ -346,9 +351,21 @@ class GamePage {
         }
     }
 
+    clearDescription() {
+        if (this.descriptionContainer.firstChild) {
+            this.descriptionContainer.removeChild(this.descriptionContainer.firstChild);
+        }
+    }
+
     createTaskTag(task) {
         const p = document.createElement("div");
-        p.textContent = task.text;
+        p.textContent = task.name;
+        return p;
+    }
+
+    createDescriptionTag(task) {
+        const p = document.createElement("div");
+        p.textContent = task.description;
         return p;
     }
 
@@ -398,7 +415,7 @@ class ResultPage {
 const forms = document.querySelectorAll('form');
 forms.forEach(form => {
     form.addEventListener('submit', e => e.preventDefault())
-})
+});
 
 const game = new Game(config, levels);
 game.run();
