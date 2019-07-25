@@ -30,6 +30,17 @@ const levels = {
             ],
             "right": 1,
             "factor": 1
+        },  {
+            "name": "Александр Голубев",
+            "description": "",
+            "answers": [
+                "img/content/kontur/kokovin.jpg",
+                "img/content/kontur/rumak.png",
+                "img/content/kontur/golubevjr.png",
+                "img/content/kontur/burmistrov.jpg",
+            ],
+            "right": 2,
+            "factor": 1
         }, {
             "name": "Павел Егоров",
             "description": "",
@@ -135,7 +146,7 @@ const levels = {
             "answers": [
                 "img/content/kontur/ilin.png",
                 "img/content/kontur/dashkevich.jpg",
-                "img/content/kontur/titarenko.png",
+                "img/content/kontur/shifmanjr.jpg",
                 "img/content/kontur/shifman.jpeg",
             ],
             "right": 3,
@@ -213,7 +224,7 @@ const levels = {
                 "img/content/kontur/volkov.png",
                 "img/content/kontur/konovalov.jpg",
                 "img/content/kontur/pliner.png",
-                "img/content/kontur/ustujanin.jpeg",
+                "img/content/kontur/plinerold.png",
             ],
             "right": 2,
             "factor": 1
@@ -331,7 +342,7 @@ const levels = {
             "name": "Ксения Ильиных",
             "description": "",
             "answers": [
-                "img/content/kontur/koshelev.jpg",
+                "img/content/kontur/ratner.jpg",
                 "img/content/kontur/ilinyh.jpg",
                 "img/content/kontur/konovalova.jpg",
                 "img/content/kontur/okunzeva.jpg",
@@ -452,8 +463,8 @@ const levels = {
             "name": "Евгений Романовский",
             "description": "",
             "answers": [
-                "img/content/kontur/romanovskiye.png",
-                "img/content/kontur/romanovskiya.png",
+                "img/content/kontur/romanovskiye2.png",
+                "img/content/kontur/romanovskiya2.png",
                 "img/content/kontur/burmistrov.jpg",
                 "img/content/kontur/sokolov.png",
             ],
@@ -480,17 +491,6 @@ const levels = {
                 "img/content/kontur/konev.png",
             ],
             "right": 2,
-            "factor": 1
-        }, {
-            "name": "Александр Куприн",
-            "description": "",
-            "answers": [
-                "img/content/kontur/sokolov.png",
-                "img/content/kontur/gein.png",
-                "img/content/kontur/konev.png",
-                "img/content/kontur/kuprin.png",
-            ],
-            "right": 3,
             "factor": 1
         }, {
             "name": "Вероника Самохина",
